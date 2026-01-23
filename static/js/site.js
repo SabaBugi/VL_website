@@ -53,19 +53,21 @@ function initSiteUI() {
         if (lang === currentLang) link.classList.add('active-lang');
         link.href = `/${lang}/${page}`;
     });
-}
 
+    /* --------------------
+    Sort publications by year (DESC)
+    -------------------- */
+    document.querySelectorAll('.publication-list').forEach(list => {
+        const items = Array.from(list.children);
 
-/* --------------------
-   Under construction language toggle
--------------------- */
-const kaText = document.querySelector('.construction-ka');
-if (kaText) {
-    const pathParts = window.location.pathname.split('/').filter(Boolean);
-    const lang = pathParts[0] === 'ka' ? 'ka' : 'en';
+        items
+            .sort((a, b) => {
+                const yearA = parseInt(a.dataset.year, 10);
+                const yearB = parseInt(b.dataset.year, 10);
+                return yearB - yearA; // newest first
+            })
+            .forEach(item => list.appendChild(item));
+    });
 
-    if (lang === 'ka') {
-        kaText.style.display = 'block';
-    }
 }
 
