@@ -1,0 +1,477 @@
+/* =========================
+   RESET & BASE
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+.site-header {
+    background-color: #8d021f;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    position: relative;
+}
+
+/* =========================
+   LOGO
+   ========================= */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-link:hover {
+    opacity: 0.85;
+}
+
+/* =========================
+   HAMBURGER BUTTON
+   ========================= */
+.hamburger {
+    display: block; /* always visible */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =========================
+   NAVIGATION (ALWAYS HAMBURGER)
+   ========================= */
+.nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #8d021f;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.35s ease;
+    z-index: 999;
+}
+
+.nav.open {
+    max-height: 100vh;
+    opacity: 1;
+}
+
+/* =========================
+   MENU LIST
+   ========================= */
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-list li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-list a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-list a:hover {
+    background-color: #6f0118;
+}
+
+/* =========================
+   ACTIVE PAGE
+   ========================= */
+.nav-list a.active {
+    background-color: white;
+    color: #8d021f;
+    font-weight: bold;
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+.content {
+    min-height: calc(100vh - 140px);
+    padding: 40px 0;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.site-footer {
+    background-color: #8d021f;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* =========================
+   LANGUAGE SWITCHER
+   ========================= */
+.language-switcher {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.language-switcher a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.language-switcher a:hover {
+    text-decoration: underline;
+}
+
+.language-switcher a.active-lang {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   HERO / MAIN PAGE
+   ========================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;              /* FULL viewport height */
+    width: 100%;
+    background: url('../images/hero.jpg') center center / cover no-repeat;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    animation: heroZoom 12s ease-in-out infinite alternate;
+}
+
+/* Dark overlay for readability */
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+/* Text block */
+.hero-content {
+    text-align: left;
+    color: white;
+    padding: 150px;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+/* Button */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #8d021f;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #6f0118;
+}
+
+/* Hero small for subpages */
+.hero-small {
+    min-height: 250px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('../images/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+}
+
+/* Hero zoom animation */
+@keyframes heroZoom {
+    from { background-size: 100%; }
+    to   { background-size: 110%; }
+}
+
+
+/* =========================
+   BIO PAGE LAYOUT
+   ========================= */
+
+.bio-page {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 25px;
+}
+
+/* Header block */
+.bio-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+
+    flex-direction: row-reverse;
+}
+
+
+.bio-photo {
+    margin-right: 30px; /* 👈 pulls photo inward */
+}
+
+.bio-photo img {
+    width: 160px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+/* Title */
+.bio-title h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #8d021f;
+    max-width: 65%;
+}
+
+.bio-tagline {
+    margin-top: 8px;
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+/* Text formatting */
+.bio-page p {
+    text-align: justify;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    font-size: 17px;
+}
+
+.bio-page h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #8d021f;
+}
+
+.bio-page ul {
+    margin: 15px 0 25px 30px;
+}
+
+.bio-page li {
+    margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bio-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .bio-photo img {
+        width: 140px;
+    }
+}
+
+/* =========================
+   CONTACT PAGE LAYOUT
+   ========================= */
+
+/* Container for Contacts */
+.contact-container {
+    text-align: center;
+}
+
+/* Title Styling */
+.contact-container h1 {
+    color: #800020; /* Burgundy color */
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+/* Cards Layout */
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Individual Card Styling */
+.card {
+    background-color: #fdfdfd;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Card Icons */
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+/* Card Titles */
+.card h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Card Text */
+.card p {
+    color: #800020; /* Burgundy color for text */
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* =========================
+   Under Construction Page
+========================= */
+
+.construction-page {
+    min-height: calc(100vh - 160px); /* header + footer space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.construction-wrapper {
+    text-align: center;
+}
+
+.construction-image {
+    max-width: 840px;
+    width: 100%;
+    opacity: 0.9;
+}
+
+/* Georgian text */
+.construction-ka {
+    margin-bottom: 55px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #8d021f;
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   Under Construction Pulse
+========================= */
+
+@keyframes softPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.03);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+}
+
+.construction-image {
+    max-width: 840px;
+    width: 100%;
+    opacity: 0.9;
+    animation: softPulse 4s ease-in-out infinite;
+}
