@@ -639,6 +639,8 @@ button, .hero-btn, .pub-download {
     .card {
         width: 100%;
         max-width: 320px;
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
 }
 
