@@ -159,6 +159,11 @@ button, .hero-btn, .pub-download {
     padding: 40px 20px;
 }
 
+.content.fullscreen {
+    padding: 0;
+}
+
+
 /* =========================
    FOOTER
    ========================= */
@@ -637,10 +642,3 @@ button, .hero-btn, .pub-download {
     }
 }
 
-/* =========================
-   Hero Fullscreen Override
-========================= */
-
-.content.hero {
-    padding: 0;
-}
