@@ -156,7 +156,7 @@ button, .hero-btn, .pub-download {
    ========================= */
 .content {
     min-height: calc(100vh - 140px);
-    padding: 40px 0;
+    padding: 40px 20px;
 }
 
 /* =========================
@@ -580,7 +580,7 @@ button, .hero-btn, .pub-download {
 @media (max-width: 768px) {
 
     .hero {
-        min-height: 100vh;
+        min-height: 100svh;
     }
 
     .hero-content {
