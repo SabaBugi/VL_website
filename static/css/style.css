@@ -636,3 +636,11 @@ button, .hero-btn, .pub-download {
         max-width: 320px;
     }
 }
+
+/* =========================
+   Hero Fullscreen Override
+========================= */
+
+.content.hero {
+    padding: 0;
+}
