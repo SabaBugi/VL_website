@@ -572,7 +572,7 @@ button, .hero-btn, .pub-download {
     }
 
     .content {
-        padding: 30px 0;
+        padding: 30px 16px;
     }
 }
 
@@ -597,6 +597,23 @@ button, .hero-btn, .pub-download {
     }
 }
 
+/* Bio Page Responsive */
+@media (max-width: 768px) {
+
+    .bio-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .bio-photo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .bio-title h1 {
+        max-width: 100%;
+    }
+}
 
 /* Publications Page Responsive */
 @media (max-width: 768px) {
