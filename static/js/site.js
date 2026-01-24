@@ -69,5 +69,20 @@ function initSiteUI() {
             .forEach(item => list.appendChild(item));
     });
 
+    /* --------------------
+    Sort videos by year (DESC)
+    -------------------- */
+    const videoList = document.querySelector('.video-list');
+    if (videoList) {
+        const videos = Array.from(videoList.querySelectorAll('.video-row'));
+
+        videos
+            .sort((a, b) => {
+                return parseInt(b.dataset.year, 10) - parseInt(a.dataset.year, 10);
+            })
+            .forEach(video => videoList.appendChild(video));
+    }
+
+
 }
 
